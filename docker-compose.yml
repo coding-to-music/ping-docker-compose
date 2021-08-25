@@ -1,0 +1,12 @@
+version: "3"
+services:
+  service-1:
+    image: my_image
+    build:
+      context: .
+    container_name: service-1
+    command: "ping service-2 -c 3"
+  service-2:
+    image: my_image
+    container_name: service-2
+    command: "ping service-1 -c 3"
